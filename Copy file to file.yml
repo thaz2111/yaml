@@ -1,0 +1,15 @@
+- hosts: webservers
+  become: true
+  tasks:
+  - name: Update server to latest
+    package:
+      name: nginx
+      state: latest
+  - name: Copying the content from source
+    copy:
+      src: index.hmtl
+      dest: /var/www/html/index.html
+  - name: restart the nginx server
+    service: 
+     name: nginx
+     state: started

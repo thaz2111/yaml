@@ -1,0 +1,12 @@
+id: 1
+name:
+ fname: Abdul Rahman
+ lname: Arsalan
+Phno: 123456
+skills:
+- Java
+- AWS
+- Devops
+- Windows
+
+

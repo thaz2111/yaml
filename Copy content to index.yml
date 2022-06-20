@@ -1,0 +1,8 @@
+- hosts: webservers
+  tasks: 
+   - name: Copying content to files
+      copy: content="Arsalan Wonderful kid \n" dest=/var/www/html/index.html
+    - name: restart nginx server
+      service:
+       name: nginx
+       state: started
