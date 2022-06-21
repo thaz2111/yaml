@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  tasks:
+  - name: install the server
+      yum:
+       name: "{{package}}"
+       state: present
+  - name: copying the file
+      src: index.hmtl
+      dest: /var/www/html/index.html
+  - name: start the service
+      service:
+       name: "{{package}}"
+       state: started
+  - debug: 
+     var: "{{package}}"
