@@ -12,8 +12,9 @@
       dest: /var/www/html/index.html
       notify:
         start the service
-  handler: 
+  handlers: 
   - name: start the service
-    service: "{{package}}"
-    state: started
+    service:
+     name: "{{package}}"
+     state: started
 
