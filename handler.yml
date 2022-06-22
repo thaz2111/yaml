@@ -1,0 +1,19 @@
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+  - name: install the server
+    yum:
+     name: "{{package}}"
+     state: present
+  - name: copying the file
+    copy:
+      src: index.hmtl
+      dest: /var/www/html/index.html
+      notify:
+        start the service
+  handler: 
+  - name: start the service
+    service: "{{package}}"
+    state: started
+
